@@ -1,0 +1,41 @@
+name: pingmyride
+description: Smart campus bus tracking and booking system.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase Core
+  firebase_core: ^4.0.0
+  cloud_firestore: ^6.0.0
+  firebase_auth: ^6.0.1
+  permission_handler: ^12.0.0
+  firebase_database: ^12.0.0
+
+  # Background service for live tracking
+  flutter_background_service: ^5.0.5
+  flutter_background_service_android: ^6.3.1 # Updated to suggested compatible version
+
+  # Location tracking
+  geolocator: ^14.0.2
+
+  # QR Code (ticket system)
+  qr_flutter: ^4.1.0
+
+  # UI
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
