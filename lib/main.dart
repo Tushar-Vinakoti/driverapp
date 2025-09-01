@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart'; // Added for defaultTargetPlatform
 import 'package:flutter_background_service/flutter_background_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'firebase_options.dart'; // from `flutterfire configure`
@@ -10,6 +11,11 @@ import 'service.dart'; // background service entry + configure
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   // Ensure we always have a signed-in user (anonymous driver session)
   if (defaultTargetPlatform == TargetPlatform.android ||
